@@ -10,6 +10,22 @@ body {
     font-weight: 400;
     font-style: normal;
     background-color: black;
+    color: white;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    color: #e60000;
+    font-weight: bold;
+}
+
+li span {
+    color: white;
+    font-weight: normal;
 }
 
 header, main, section, footer {
@@ -82,4 +98,43 @@ header nav a:hover {
     background-color: #831010;
     color: black;
     border-radius: 0.4rem;
+}
+
+main {
+    background-image: url(bleach\ thumbnail.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:cover;
+    padding: 3rem;
+}
+
+main .movie-info {
+    display: flex;
+    gap: 2rem;
+}
+
+main .hero-content {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+}
+
+.btn {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    background-color: #831010;
+    cursor: pointer;
+    width: 10rem;
+    height: 3rem;
+    padding: 0.25rem 0.65rem;
+    border-radius: 0.8rem;
+}
+
+.btn:hover {
+    color: black;
+}
+
+.btn span {
+    font-size: 1.2rem;
 }
