@@ -1,9 +1,3 @@
-/*
-* {
-    border: 1px solid darkblue;
-}
-*/
-
 body {
     font-family: 'Open Sans', serif;
     font-optical-sizing: auto;
@@ -51,6 +45,7 @@ header {
 header .logo {
     height: 1.9rem;
     cursor: pointer;
+    order: 1;
 }
 
 header .search {
@@ -59,6 +54,7 @@ header .search {
     align-items: center;
     gap: 1.5rem;
     position: relative;
+    order: 3;
 }
 
 header #search-bar:hover::placeholder {
@@ -77,31 +73,36 @@ header .search .icon-bell {
 
 header .search .profile {
     cursor: pointer;
-    opacity: 0.8;
+    filter: brightness(0.8);
     height: 3rem;
     border: 0.25rem solid #831010;
     border-radius: 100%;
+    transition: filter 0.75s ease;
 }
 
 header .profile:hover {
-    opacity: 1;
+    filter: brightness(1);
+}
+
+header nav {
+    order: 2;
 }
 
 header nav a {
     text-decoration: none;
     color: white;
     font-weight: 550;
-    padding: 0.6rem;
+    padding: 0.5rem;
+    transition: all 0.75s ease;
 }
 
 header nav a:hover {
     background-color: #831010;
-    color: black;
     border-radius: 0.4rem;
 }
 
 main {
-    background-image: url(bleach\ thumbnail.png);
+    background-image: url(img/bleach-thumbnail-edited.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size:cover;
@@ -129,6 +130,7 @@ main .hero-content {
     height: 3rem;
     padding: 0.25rem 0.65rem;
     border-radius: 0.8rem;
+    transition: color 0.75s ease;
 }
 
 .btn:hover {
@@ -137,4 +139,180 @@ main .hero-content {
 
 .btn span {
     font-size: 1.2rem;
+}
+
+#popular {
+    margin-bottom: 3rem;
+}
+
+/* Border görsel olarak hoş gelmediği için kaldırıldı
+.maturity-rating {
+    border: 2px solid red;
+    display: inline-block;
+    padding: 0 0.5rem;
+}
+*/
+
+.suggestion-row {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+}
+
+.suggestion-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.suggestion-title a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: color 0.75s ease;
+}
+
+.suggestion-title a:hover {
+    color: red;
+}
+
+.suggestion-details {
+    display: flex;
+    gap: 1.5rem;
+    color: r;
+}
+
+.suggestion-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.suggestion-item {
+    position: relative;
+    width: 30%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.suggestion-item-content {
+    position: relative;
+    z-index: 1;
+    top: 4rem;
+    left: 1rem;
+}
+
+.suggestion-item-content > * {
+    margin-bottom: 1.5rem;
+}
+
+.suggestion-item-content > *:last-child {
+    margin-bottom: 0;
+}
+
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.5);
+    transition: all 0.75s ease;
+}
+
+.suggestion-item:hover .background {
+    filter: brightness(0.75);
+    transform: scale(1.166);
+}
+
+
+#item-1:first-child .background{
+    background-image: url('img/akame-ga-kill-lastt.jpg');
+    background-position: top;
+}
+
+#item-2:nth-child(2) .background{
+    background-image: url('img/charlotte.jpg');
+    background-position: top;
+}
+
+#item-3:nth-child(3) .background{
+    background-image: url('img/owari-no-seraph.jpg');
+    background-position: top;
+}
+
+#item-4:first-child .background{
+    background-image: url('img/date-a-live.jpg');
+    background-position: top;
+}
+
+#item-5:nth-child(2) .background{
+    background-image: url('img/darker-than-black.jpg');
+}
+
+#item-6:nth-child(3) .background{
+    background-image: url('img/steins-gate-new.jpg');
+    background-position: bottom;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 6rem;
+}
+
+.footer-left {
+    flex-grow: 2;
+}
+
+.footer-middle {
+    flex-grow: 1.5;
+}
+
+.footer-right {
+    flex-grow: 5;
+}
+
+
+footer div nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+footer div nav a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.75s ease;
+}
+
+footer div nav a:hover {
+    color: red;
+}
+
+.footer-left {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.5rem;
+}
+
+.social-media {
+    display: flex;
+    width: 5%;
+    gap: 1rem;
+    cursor: pointer;
+}
+
+@media (max-width: 700px) {
+    header {
+        flex-wrap: wrap;
+        row-gap: 2rem;
+        justify-content: space-around;
+    }
+
+    header nav {
+        order: 4;
+    }
 }
